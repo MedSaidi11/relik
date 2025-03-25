@@ -57,7 +57,7 @@ def preprocess_genre_el_file(
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     with open(file_path) as fi, open(output_path, "w") as fo:
         for i, line in tqdm(enumerate(fi)):
-            text, annotations = preprocess_line(line.strip())
+            text, annotations = json.loads(line)["tokenized_text"], json.loads(line)["ner"]
             fo.write(
                 json.dumps(dict(doc_id=i, doc_text=text, doc_span_annotations=annotations))
                 + "\n"

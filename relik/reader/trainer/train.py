@@ -104,8 +104,8 @@ def train(cfg: DictConfig) -> None:
     # Trainer fit
     trainer.fit(
         model=model,
-        train_dataloaders=DataLoader(train_dataset, batch_size=None, num_workers=0),
-        val_dataloaders=DataLoader(val_dataset, batch_size=None, num_workers=0),
+        train_dataloaders=DataLoader(train_dataset, batch_size=None, num_workers=4),
+        val_dataloaders=DataLoader(val_dataset, batch_size=None, num_workers=4),
     )
 
     # if cfg.training.save_model_path:

@@ -1,12 +1,12 @@
 model:
-  transformer_model: "microsoft/deberta-v3-base"
+  transformer_model: "sapienzanlp/relik-reader-deberta-v3-base-aida"
 
 optimizer:
   lr: 0.0001
   warmup_steps: 5000
   total_steps: ${training.trainer.max_steps}
   total_reset: 1
-  weight_decay: 0.0
+  weight_decay: 0.05
   lr_decay: 0.8
   no_decay_params:
     - "bias"

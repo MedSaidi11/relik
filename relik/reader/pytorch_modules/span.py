@@ -193,7 +193,7 @@ class RelikReaderForSpanExtraction(RelikReaderBase):
 
                 # instantiate dataloader
                 iterator = DataLoader(
-                    self.dataset, batch_size=None, num_workers=0, shuffle=False
+                    self.dataset, batch_size=None, num_workers=4, shuffle=False
                 )
                 if progress_bar:
                     iterator = tqdm(iterator, desc="Predicting with RelikReader")
